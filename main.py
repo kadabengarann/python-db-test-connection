@@ -32,4 +32,4 @@ def list_tables():
     return "<br>".join(tables)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(port="5005")
