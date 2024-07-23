@@ -1,4 +1,6 @@
 flask
+wheel
+gunicorn
 mysql-connector-python
 mysqlclient
 langchain-community
