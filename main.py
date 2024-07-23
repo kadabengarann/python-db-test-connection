@@ -18,6 +18,17 @@ db = SQLDatabase.from_uri(DB_URI)
 # Create an engine using SQLAlchemy
 engine = create_engine(DB_URI)
 
+print("DB connection successful!!")
+
+# Use SQLAlchemy's inspect module to get the list of tables
+inspector = inspect(engine)
+tables = inspector.get_table_names()
+
+# Print the list of tables
+print("Tables in the database:")
+print(tables)
+
+
 # Initialize the Flask application
 app = Flask(__name__)
 
