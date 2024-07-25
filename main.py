@@ -14,9 +14,10 @@ DB_URI = URI
 
 engine = create_engine(DB_URI)
 
+connection = engine.connect()
+
 print("DB connection successful!!")
 
-# Use SQLAlchemy's inspect module to get the list of tables
 inspector = inspect(engine)
 tables = inspector.get_table_names()
 
