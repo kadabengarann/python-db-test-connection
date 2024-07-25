@@ -12,10 +12,6 @@ load_dotenv()
 URI = os.getenv('DB_URI')
 DB_URI = URI
 
-# Create the SQLDatabase object from the URI
-db = SQLDatabase.from_uri(DB_URI)
-
-# Create an engine using SQLAlchemy
 engine = create_engine(DB_URI)
 
 print("DB connection successful!!")
