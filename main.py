@@ -1,6 +1,6 @@
 import os
 from pprint import pprint
-from flask import Flask
+from flask import Flask, render_template
 from sqlalchemy import create_engine, inspect
 from dotenv import load_dotenv
 from langchain_community.utilities import SQLDatabase
@@ -40,7 +40,7 @@ def list_tables():
     if USING_DB:
         inspector = inspect(engine)
         tables = inspector.get_table_names()
-        return "<br>".join(tables)
+        return render_template('tables.html', tables=tables)
     else:
         return "Database connection is disabled."
 
